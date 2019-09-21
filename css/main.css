@@ -10,6 +10,7 @@
 }
 
 /* El estilo base para moviles */
+/* Simplemente define caracteristicas visuales a todo el tocumento (color de fondo, color de fuente, tipo de fuente, alineacion de texto y su peso) */
 body {
     background-color: #112935;
     color: white;
@@ -18,11 +19,18 @@ body {
     font-weight: 400;
 }
 
+/* Establece los elementos del header como tipo flex y establece la misma distancia entre ellos. */
 .header {
     display: flex;
     justify-content: space-between
 }
 
+/* Les cambia el color a los elementos con la etiqueta a en el nav dentro del header a la hora de colocar el mouse sobre ellos. */
+.header>nav ul.menu a:hover{
+    color: #F74442;
+}
+
+/* Oculta un hipervinculo. */
 .src-only {
     display: none;
 }
@@ -260,6 +268,10 @@ footer .social-links {
     
 }
 
+.menu ul li:last-child{
+    color: #F74442;
+}
+
 /* Pesonalizando estilo para tablets*/
 @media only screen and (min-width: 768px) {
   
@@ -302,9 +314,11 @@ footer .social-links {
     }
     
     /*TODO: FALTA CSS */
+
+    
 } 
 
-@media only screen and (min-width: 1024px) {
+x@media only screen and (min-width: 1024px) {
 
        /*TODO: FALTA CSS */
     .container{
@@ -344,6 +358,7 @@ footer .social-links {
     .container .contact{
         grid-area: 2 / 3 / 5 / 5;
     } 
+    
     
 
 }
