@@ -25,7 +25,7 @@ body {
     justify-content: space-between
 }
 
-/* Les cambia el color a los elementos con la etiqueta a en el nav dentro del header a la hora de colocar el mouse sobre ellos. */
+/* Les cambia el color a los elementos con la etiqueta "a" en el nav dentro del header a la hora de colocar el mouse sobre ellos. */
 .header>nav ul.menu a:hover{
     color: #F74442;
 }
@@ -149,6 +149,7 @@ p{
     background-color: #ffffff;
     text-align: left;
     padding-bottom: 2em;
+    height: 100%;
 }
 
 
@@ -192,12 +193,28 @@ p{
    width: 200px;
 }
 
+/* aumento el padding del container dentro de la seccion about */
+.bout>.container{
+    padding: 0.5em 3em 2em 3em;
+}
+
 .bio-info p{
     font-size: 16px;
     padding: 2em;
     text-align: left;
     line-height: 25px;
     letter-spacing: 2px;
+}
+/* modificacion de iconos y flecha */
+.social-links i.fab{
+    font-size: 5rem;
+    padding: 0px 20px;
+}
+
+.big-hero i.fas {
+    font-size: 80px;
+    padding: 24px;
+    color: #0AC693;
 }
 
 .contact {
@@ -242,6 +259,7 @@ p{
     background-color: #F74442;
     font-weight: 400;
     color: white;
+    letter-spacing: 1em;
     font-size: 1rem;
 }
 
@@ -252,11 +270,13 @@ p{
 footer{
     background-color: #0D5061;
     color:#D7DEE6;
+    padding-top: 10px; /*Le agregue mas paddin a la parte superior */
 }
 
 footer .social-links {
     margin: 0;
 }
+
 
 .menu {
     background-color: #112935;
@@ -285,13 +305,28 @@ footer .social-links {
     
 }
 
-.menu ul li:last-child{
-    color: #F74442;
-}
 
 /* Pesonalizando estilo para tablets*/
 @media only screen and (min-width: 768px) {
-  
+    
+    /* despues de probar disintas medidas entre el header y el big hero estas son las unicas medidas con las que he logrado que abarque la zona completa del viewport */
+    .header{
+        height: 20vh;
+    }
+
+    .big-hero{
+        height: 80vh;
+    }
+
+    .big-hero p{
+        font-size: 1.2rem;
+    }
+
+    /* reduje el margin para que no queden tan seprados los iconos del texto */
+    ul.social-links{
+        margin-top: 10px;
+    }
+
     .post ul {
         list-style: none;
         display: flex;
@@ -336,14 +371,41 @@ footer .social-links {
 } 
 
 @media only screen and (min-width: 1024px) {
-
-       /*TODO: FALTA CSS */
-    .container{
+    
+    .container {
         width: 80%;
         margin: 0 auto;
         max-width: 1024px;
     }
 
+    .about .container{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .about .container h2{
+        width: 100%;
+    }
+
+    .about .container .bio-info{
+        width: 50%;
+    }
+
+    .about .container .contact-form{
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    /* ajustes para controlar el tamanio del boton de contactar */
+    .about .container .contact .contact-form input[type="submit"]{
+        width: 45%;
+        text-align: center;
+        letter-spacing: 0.3em;
+        font-size: 1.1em;
+    }
+    
+   
 
 }
 
@@ -358,24 +420,32 @@ footer .social-links {
         max-width: 1440px;
     }
 
-    /* Implementacion de sistema de grid para ordenar elementos en desktop */
+   
     .about .container{
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-rows: 20% 20% 20% 20% 20%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .about .container h2{
-        grid-area: 1 / 5 / 1 / 1;
-    }
-    .container .bio-info{
-        grid-area: 2 / 1 / 3 / 3;
+        width: 100%;
     }
 
-    .container .contact{
-        grid-area: 2 / 3 / 5 / 5;
-    } 
-    
+    .about .container .bio-info{
+        width: 50%;
+    }
+
+    .about .container .contact-form{
+        width: 100%;
+    }
+
+    /* ajustes para controlar el tamanio del boton de contactar */
+    .about .container .contact .contact-form input[type="submit"]{
+        width: 50%;
+        text-align: center;
+        letter-spacing: 0.3em;
+        font-size: 1.1em;
+    }
     
 
 }
